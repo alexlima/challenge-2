@@ -1,0 +1,21 @@
+PODS:
+  - DLRadioButton (1.4.8)
+  - IQKeyboardManagerSwift (4.0.2)
+  - Realm (0.102.0):
+    - Realm/Headers (= 0.102.0)
+  - Realm/Headers (0.102.0)
+  - RealmSwift (0.102.0):
+    - Realm (= 0.102.0)
+
+DEPENDENCIES:
+  - DLRadioButton
+  - IQKeyboardManagerSwift
+  - RealmSwift
+
+SPEC CHECKSUMS:
+  DLRadioButton: 8fe4865b3ea8a5236e1d114dd283dd0884d3dc46
+  IQKeyboardManagerSwift: 2f2c19c509f67c4c0df2826db54033d3e090ce65
+  Realm: 5d219f9037e3ec2019c599b8227bfc95433cb10e
+  RealmSwift: e6f436f9fea1c57b9ad6d1c46d57562c845f3c4c
+
+COCOAPODS: 0.39.0
