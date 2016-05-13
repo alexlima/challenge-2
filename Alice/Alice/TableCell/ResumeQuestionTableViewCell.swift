@@ -1,5 +1,5 @@
 //
-//  ResumeTableViewCell.swift
+//  ResumeQuestionTableViewCell.swift
 //  Alice
 //
 //  Created by Alex Lima on 13/05/16.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ResumeTableViewCell: UITableViewCell {
+class ResumeQuestionTableViewCell: UITableViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()

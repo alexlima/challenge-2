@@ -64,7 +64,15 @@
                             <outlet property="delegate" destination="1S7-7N-gGW" id="Kjc-ri-shS"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="5VC-bt-b61"/>
+                    <navigationItem key="navigationItem" id="5VC-bt-b61">
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="pNV-pJ-I1N">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="UXR-rW-Qma">
+                                <rect key="frame" x="233" y="7" width="71" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Send"/>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <segue destination="T57-FO-EGM" kind="show" id="Vuh-Hg-euv"/>
