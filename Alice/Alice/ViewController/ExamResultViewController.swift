@@ -10,9 +10,15 @@ import UIKit
 
 class ExamResultViewController: UIViewController
 {
-    override func viewDidLoad() {
+    @IBOutlet weak var resultLabel: UILabel!
+    
+    var exam : Exam = Exam()
+    
+    override func viewDidLoad()
+    {
         super.viewDidLoad()
         self.title = "Result"
+        resultLabel.text = "\(exam.result)%"
     }
 
     @IBAction func finishAndSAve(sender: UIButton) {

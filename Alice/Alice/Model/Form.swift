@@ -36,17 +36,16 @@ class Form : Object
         self.addQuestion(title, alternatives: alternatives, key: "")
     }
     
-    func answers() -> List<Answer>
+    func answer() -> Int
     {
-        let answers = List<Answer>()
+        var answer = 0
         for question in questions {
             for alternative in question.alternatives {
                 if (alternative.selected){
-                    let answer = Answer(key: question.key, value: alternative.value)
-                    answers.append(answer)
+                    answer = answer + alternative.weight
                 }
             }
         }
-        return answers
+        return answer
     }
 }

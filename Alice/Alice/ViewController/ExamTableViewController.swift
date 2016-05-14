@@ -29,10 +29,10 @@ class ExamTableViewController : BaseTableViewController, ExamQuestionTableViewCe
     
     func initQuestions()
     {
-        form.addQuestion("Do you have migraines?", alternatives: [Alternative(title: "Yes"), Alternative(title: "No")])
-        form.addQuestion("How old are you?", alternatives: [Alternative(title: "15 years old or younger"), Alternative(title: "15+")])
-        form.addQuestion("What is your gender?", alternatives: [Alternative(title: "Men"), Alternative(title: "Woman")])
-        form.addQuestion("Do you use hallucinogenic drugs?", alternatives: [Alternative(title: "Yes"), Alternative(title: "No")])
+        form.addQuestion("Does the patient have migraines?", alternatives: [Alternative(weight : 25, title: "Yes"), Alternative(title: "No")])
+        form.addQuestion("Does the patient have 15 years or less?", alternatives: [Alternative(weight : 25, title: "Yes"), Alternative(title: "No")])
+        form.addQuestion("What is patient gender?", alternatives: [Alternative(weight : 25, title: "Male"), Alternative(title: "Female")])
+        form.addQuestion("Does the patient use hallucinogenic drugs?", alternatives: [Alternative(weight : 25, title: "Yes"), Alternative(title: "No")])
     }
     
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int
@@ -60,9 +60,13 @@ class ExamTableViewController : BaseTableViewController, ExamQuestionTableViewCe
         return height
     }
     
-    func formQuestionDidSelectAlternative(questionOrder: Int, alternativeOrder: Int)
+    func examQuestionDidSelectAlternative(questionOrder: Int, alternativeOrder: Int)
     {
-        print("formQuestionDidSelectAlternative \(questionOrder) = \(alternativeOrder)")
+        var alternatives = form.questions[questionOrder].alternatives
+        for (var i = 0; i < alternatives.count; i++){
+            alternatives[i].selected = false
+        }
+        alternatives[alternativeOrder].selected = true
     }
     
     @IBAction func cancelExam(sender: UIBarButtonItem)
@@ -72,8 +76,8 @@ class ExamTableViewController : BaseTableViewController, ExamQuestionTableViewCe
     
     @IBAction func saveExam(sender: UIBarButtonItem)
     {
-        exam.result = 50; // form.answers()
         do {
+            exam.result = form.answer()
             try realm.write() {
                 realm.add(exam)
             }
@@ -82,6 +86,15 @@ class ExamTableViewController : BaseTableViewController, ExamQuestionTableViewCe
         } catch {
             print("Sorry, but something went wrong.")
             self.dismissViewControllerAnimated(true, completion: nil)
+        }
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)
+    {
+        if(segue.identifier == "ExamResultSegue")
+        {
+            let controller = segue.destinationViewController as! ExamResultViewController
+            controller.exam = exam
         }
     }
 }

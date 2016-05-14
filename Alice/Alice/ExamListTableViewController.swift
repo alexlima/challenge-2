@@ -24,7 +24,6 @@ class ExamListTableViewController : BaseTableViewController, UIAlertViewDelegate
     override func viewWillAppear(animated: Bool)
     {
         self.exams = realm.objects(Exam).toArray()
-        print(exams)
         self.tableView.reloadData()
     }
     
@@ -43,7 +42,6 @@ class ExamListTableViewController : BaseTableViewController, UIAlertViewDelegate
         let identifier = "ExamListIdentifier"
         let cell = tableView.dequeueReusableCellWithIdentifier(identifier, forIndexPath: indexPath) as! ExamListTableViewCell
         cell.setExam(exams[indexPath.row], index: indexPath.row)
-        // cell.delegate = self
         return cell
     }
     
@@ -56,7 +54,7 @@ class ExamListTableViewController : BaseTableViewController, UIAlertViewDelegate
     @IBAction func addExam(sender: UIBarButtonItem)
     {
         let alert = UIAlertView()
-        alert.title = "Please, inform you patient name."
+        alert.title = "What is the patient name?"
         alert.addButtonWithTitle("Done")
         alert.alertViewStyle = UIAlertViewStyle.PlainTextInput
         alert.addButtonWithTitle("Cancel")
@@ -78,7 +76,6 @@ class ExamListTableViewController : BaseTableViewController, UIAlertViewDelegate
         {
             let navigation = segue.destinationViewController
             let controller = navigation.childViewControllers[0] as! ExamTableViewController
-            print(exam)
             controller.exam = exam
         }
     }

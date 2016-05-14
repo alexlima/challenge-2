@@ -124,12 +124,12 @@
 		596F72E01CE634720093A6BC /* Alice */ = {
 			isa = PBXGroup;
 			children = (
-				59A7CF531CE6C31600B14C56 /* alice.png */,
-				59A7CF4C1CE6B82B00B14C56 /* Extensions */,
-				59A7CF321CE67F3800B14C56 /* Model */,
 				596F72ED1CE634730093A6BC /* Info.plist */,
+				59A7CF531CE6C31600B14C56 /* alice.png */,
 				596F72E11CE634720093A6BC /* AppDelegate.swift */,
 				596F72E81CE634730093A6BC /* Assets.xcassets */,
+				59A7CF4C1CE6B82B00B14C56 /* Extensions */,
+				59A7CF321CE67F3800B14C56 /* Model */,
 				59A7CF471CE6A20900B14C56 /* Storyboard */,
 				59A7CF311CE6797200B14C56 /* TableCell */,
 				59A7CF241CE6791500B14C56 /* ViewController */,

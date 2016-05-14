@@ -10,7 +10,7 @@ import Foundation
 
 class Alternative
 {
-    var value : String = ""
+    var weight : Int = 0
     var title : String = ""
     var selected : Bool = false
     
@@ -19,25 +19,25 @@ class Alternative
     
     // Designated initializer
     init(
-        value : String,
+        weight : Int,
         title : String,
         selected : Bool)
     {
-        self.value = value
+        self.weight = weight
         self.title = title
         self.selected = selected
     }
     
     // Convenience initializer
-    convenience init(value : String, title : String)
+    convenience init(weight : Int, title : String)
     {
-        self.init(value : value, title : title, selected : false)
+        self.init(weight : weight, title : title, selected : false)
     }
     
     // Convenience initializer
     convenience init(title : String)
     {
-        self.init(value : title, title : title, selected : false)
+        self.init(weight : 0, title : title, selected : false)
     }
 }
 

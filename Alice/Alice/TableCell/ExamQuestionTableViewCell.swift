@@ -11,7 +11,7 @@ import DLRadioButton
 
 protocol ExamQuestionTableViewCellDelegate
 {
-    func formQuestionDidSelectAlternative(questionOrder : Int, alternativeOrder : Int)
+    func examQuestionDidSelectAlternative(questionOrder : Int, alternativeOrder : Int)
 }
 
 class ExamQuestionTableViewCell: UITableViewCell
@@ -45,6 +45,6 @@ class ExamQuestionTableViewCell: UITableViewCell
     
     func selectButton(button : DLRadioButton)
     {
-        self.delegate.formQuestionDidSelectAlternative(self.questionOrder, alternativeOrder: button.tag)
+        self.delegate.examQuestionDidSelectAlternative(self.questionOrder, alternativeOrder: button.tag)
     }
 }
