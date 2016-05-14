@@ -28,6 +28,7 @@
 		59A7CF4B1CE6AB1C00B14C56 /* Exam.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A7CF4A1CE6AB1C00B14C56 /* Exam.swift */; };
 		59A7CF4E1CE6B86200B14C56 /* Results-Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A7CF4D1CE6B86200B14C56 /* Results-Array.swift */; };
 		59A7CF511CE6BDB600B14C56 /* NSDate-Format.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A7CF4F1CE6BDB600B14C56 /* NSDate-Format.swift */; };
+		59A7CF541CE6C31600B14C56 /* alice.png in Resources */ = {isa = PBXBuildFile; fileRef = 59A7CF531CE6C31600B14C56 /* alice.png */; };
 		6FA033F1D584F1FEAF2A2463 /* Pods_Alice.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD13F3493A7A86FA86CE0278 /* Pods_Alice.framework */; };
 /* End PBXBuildFile section */
 
@@ -67,6 +68,7 @@
 		59A7CF4A1CE6AB1C00B14C56 /* Exam.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Exam.swift; path = Model/Exam.swift; sourceTree = "<group>"; };
 		59A7CF4D1CE6B86200B14C56 /* Results-Array.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Results-Array.swift"; path = "Extensions/Results-Array.swift"; sourceTree = "<group>"; };
 		59A7CF4F1CE6BDB600B14C56 /* NSDate-Format.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSDate-Format.swift"; sourceTree = "<group>"; };
+		59A7CF531CE6C31600B14C56 /* alice.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = alice.png; sourceTree = "<group>"; };
 		94D365B9E592CB33EAD81A7B /* Pods-Alice.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Alice.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Alice/Pods-Alice.debug.xcconfig"; sourceTree = "<group>"; };
 		968E191A102ADC34C438AA8F /* Pods-Alice.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Alice.release.xcconfig"; path = "Pods/Target Support Files/Pods-Alice/Pods-Alice.release.xcconfig"; sourceTree = "<group>"; };
 		CD13F3493A7A86FA86CE0278 /* Pods_Alice.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Alice.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -122,6 +124,7 @@
 		596F72E01CE634720093A6BC /* Alice */ = {
 			isa = PBXGroup;
 			children = (
+				59A7CF531CE6C31600B14C56 /* alice.png */,
 				59A7CF4C1CE6B82B00B14C56 /* Extensions */,
 				59A7CF321CE67F3800B14C56 /* Model */,
 				596F72ED1CE634730093A6BC /* Info.plist */,
@@ -292,6 +295,7 @@
 				596F72EC1CE634730093A6BC /* LaunchScreen.storyboard in Resources */,
 				59A7CF401CE684A200B14C56 /* ExamQuestionTableViewCell.xib in Resources */,
 				596F72E91CE634730093A6BC /* Assets.xcassets in Resources */,
+				59A7CF541CE6C31600B14C56 /* alice.png in Resources */,
 				59A7CF281CE6794400B14C56 /* ExamListTableViewCell.xib in Resources */,
 				596F72E71CE634730093A6BC /* Main.storyboard in Resources */,
 			);
