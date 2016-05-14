@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Exams-->
@@ -101,15 +102,19 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="75%" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pD0-1A-M0j">
-                                <rect key="frame" x="20" y="243" width="280" height="81"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="75%" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pD0-1A-M0j">
+                                <rect key="frame" x="20" y="243" width="280" height="72"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="60"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M4v-A2-vX6">
-                                <rect key="frame" x="20" y="367" width="280" height="48"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M4v-A2-vX6">
+                                <rect key="frame" x="20" y="423" width="280" height="48"/>
                                 <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="280" id="26q-bE-0OA"/>
+                                    <constraint firstAttribute="height" constant="48" id="YQs-t0-iee"/>
+                                </constraints>
                                 <state key="normal" title="FINISH">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -117,21 +122,41 @@
                                     <action selector="finishAndSAve:" destination="DDO-vZ-k44" eventType="touchUpInside" id="fiT-KW-RZa"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Source: US National Library of Medicine | National Institutes of Health" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ptD-41-oK4">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Source: US National Library of Medicine | National Institutes of Health" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ptD-41-oK4">
                                 <rect key="frame" x="21" y="496" width="279" height="47"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="47" id="plF-F3-Pk2"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" textAlignment="justified" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="89Z-Gx-50c">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="justified" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="89Z-Gx-50c">
                                 <rect key="frame" x="20" y="88" width="279" height="133"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="133" id="tBY-Ce-KEg"/>
+                                </constraints>
                                 <string key="text">The Alice in Wonderland syndrome, as described by Todd in 1955, denotes a variety of self-experienced paroxysmal body schema disturbances which may co-occur with depersonalization, derealization, visual illusions and disorders of the time perception.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="89Z-Gx-50c" firstAttribute="top" secondItem="6aD-Me-oFg" secondAttribute="bottom" constant="24" id="8Jn-N3-1RT"/>
+                            <constraint firstItem="ptD-41-oK4" firstAttribute="centerX" secondItem="hSD-oT-cvy" secondAttribute="centerX" id="H8j-2C-Npc"/>
+                            <constraint firstItem="ptD-41-oK4" firstAttribute="centerX" secondItem="M4v-A2-vX6" secondAttribute="centerX" id="KXX-Wa-OFZ"/>
+                            <constraint firstItem="89Z-Gx-50c" firstAttribute="centerX" secondItem="pD0-1A-M0j" secondAttribute="centerX" id="Mns-At-cIM"/>
+                            <constraint firstItem="ptD-41-oK4" firstAttribute="centerX" secondItem="pD0-1A-M0j" secondAttribute="centerX" id="QlA-Mu-viH"/>
+                            <constraint firstItem="ptD-41-oK4" firstAttribute="trailing" secondItem="M4v-A2-vX6" secondAttribute="trailing" id="T0j-de-iDW"/>
+                            <constraint firstItem="8X2-1A-PX4" firstAttribute="top" secondItem="ptD-41-oK4" secondAttribute="bottom" constant="25" id="ecF-1f-gyA"/>
+                            <constraint firstItem="ptD-41-oK4" firstAttribute="trailing" secondItem="pD0-1A-M0j" secondAttribute="trailing" id="gMY-lv-o2y"/>
+                            <constraint firstItem="ptD-41-oK4" firstAttribute="leading" secondItem="hSD-oT-cvy" secondAttribute="leadingMargin" constant="5" id="iIX-6R-gsX"/>
+                            <constraint firstItem="pD0-1A-M0j" firstAttribute="top" secondItem="89Z-Gx-50c" secondAttribute="bottom" constant="22" id="lK5-vi-cSR"/>
+                            <constraint firstItem="89Z-Gx-50c" firstAttribute="leading" secondItem="pD0-1A-M0j" secondAttribute="leading" id="wXr-qx-kXg"/>
+                            <constraint firstItem="ptD-41-oK4" firstAttribute="top" secondItem="M4v-A2-vX6" secondAttribute="bottom" constant="25" id="xU8-I9-z5t"/>
+                        </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>

@@ -23,7 +23,7 @@ class ExamListTableViewController : BaseTableViewController, UIAlertViewDelegate
     
     override func viewWillAppear(animated: Bool)
     {
-        self.exams = realm.objects(Exam).toArray()
+        self.exams = realm.objects(Exam).sorted("createdAt", ascending: false).toArray()
         self.tableView.reloadData()
     }
     
