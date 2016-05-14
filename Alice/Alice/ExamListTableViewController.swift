@@ -64,10 +64,14 @@ class ExamListTableViewController : BaseTableViewController, UIAlertViewDelegate
     
     func alertView(alertView: UIAlertView, clickedButtonAtIndex buttonIndex: Int)
     {
-        let name = (alertView.textFieldAtIndex(0)?.text)!
-        self.exam.patient = Patient(name: name)
-        self.exam.createdAt = NSDate()
-        self.performSegueWithIdentifier("ExamSegue", sender: self)
+        // self.view.endEditing(true)
+        if(buttonIndex == 0){
+            let name = (alertView.textFieldAtIndex(0)?.text)!
+            self.exam.patient = Patient(name: name)
+            self.exam.createdAt = NSDate()
+            self.performSegueWithIdentifier("ExamSegue", sender: self)
+        }
+        alertView.textFieldAtIndex(0)?.resignFirstResponder()
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)

@@ -31,7 +31,7 @@ class ExamTableViewController : BaseTableViewController, ExamQuestionTableViewCe
     {
         form.addQuestion("Does the patient have migraines?", alternatives: [Alternative(weight : 25, title: "Yes"), Alternative(title: "No")])
         form.addQuestion("Does the patient have 15 years or less?", alternatives: [Alternative(weight : 25, title: "Yes"), Alternative(title: "No")])
-        form.addQuestion("What is patient gender?", alternatives: [Alternative(weight : 25, title: "Male"), Alternative(title: "Female")])
+        form.addQuestion("What is the patient gender?", alternatives: [Alternative(weight : 25, title: "Male"), Alternative(title: "Female")])
         form.addQuestion("Does the patient use hallucinogenic drugs?", alternatives: [Alternative(weight : 25, title: "Yes"), Alternative(title: "No")])
     }
     
