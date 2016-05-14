@@ -22,6 +22,6 @@ class ExamResultViewController: UIViewController
     }
 
     @IBAction func finishAndSAve(sender: UIButton) {
-        self.dismissViewControllerAnimated(true) {}
+        self.view.window?.rootViewController!.dismissViewControllerAnimated(true) {}
     }
 }

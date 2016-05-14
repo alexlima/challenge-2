@@ -83,7 +83,7 @@
                     </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
-                        <segue destination="DDO-vZ-k44" kind="show" identifier="ExamResultSegue" id="eFN-Hc-agd"/>
+                        <segue destination="DDO-vZ-k44" kind="presentation" identifier="ExamResultSegue" modalTransitionStyle="flipHorizontal" id="eFN-Hc-agd"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Bgg-jh-hc0" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -132,19 +132,19 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="justified" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="89Z-Gx-50c">
-                                <rect key="frame" x="20" y="88" width="279" height="133"/>
+                                <rect key="frame" x="20" y="63" width="279" height="159.5"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="133" id="tBY-Ce-KEg"/>
+                                    <constraint firstAttribute="height" constant="159.5" id="tBY-Ce-KEg"/>
                                 </constraints>
-                                <string key="text">The Alice in Wonderland syndrome, as described by Todd in 1955, denotes a variety of self-experienced paroxysmal body schema disturbances which may co-occur with depersonalization, derealization, visual illusions and disorders of the time perception.</string>
+                                <string key="text">The Alice in Wonderland syndrome, as described by Todd in 1955, denotes a variety of self-experienced paroxysmal body schema disturbances which may co-occur with depersonalization, derealization, visual illusions and disorders of the time perception. This is the patient's likelihood:</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="89Z-Gx-50c" firstAttribute="top" secondItem="6aD-Me-oFg" secondAttribute="bottom" constant="24" id="8Jn-N3-1RT"/>
+                            <constraint firstItem="89Z-Gx-50c" firstAttribute="top" secondItem="6aD-Me-oFg" secondAttribute="bottom" constant="43" id="8Jn-N3-1RT"/>
                             <constraint firstItem="ptD-41-oK4" firstAttribute="centerX" secondItem="hSD-oT-cvy" secondAttribute="centerX" id="H8j-2C-Npc"/>
                             <constraint firstItem="ptD-41-oK4" firstAttribute="centerX" secondItem="M4v-A2-vX6" secondAttribute="centerX" id="KXX-Wa-OFZ"/>
                             <constraint firstItem="89Z-Gx-50c" firstAttribute="centerX" secondItem="pD0-1A-M0j" secondAttribute="centerX" id="Mns-At-cIM"/>
@@ -153,7 +153,7 @@
                             <constraint firstItem="8X2-1A-PX4" firstAttribute="top" secondItem="ptD-41-oK4" secondAttribute="bottom" constant="25" id="ecF-1f-gyA"/>
                             <constraint firstItem="ptD-41-oK4" firstAttribute="trailing" secondItem="pD0-1A-M0j" secondAttribute="trailing" id="gMY-lv-o2y"/>
                             <constraint firstItem="ptD-41-oK4" firstAttribute="leading" secondItem="hSD-oT-cvy" secondAttribute="leadingMargin" constant="5" id="iIX-6R-gsX"/>
-                            <constraint firstItem="pD0-1A-M0j" firstAttribute="top" secondItem="89Z-Gx-50c" secondAttribute="bottom" constant="22" id="lK5-vi-cSR"/>
+                            <constraint firstItem="pD0-1A-M0j" firstAttribute="top" secondItem="89Z-Gx-50c" secondAttribute="bottom" constant="20.5" id="lK5-vi-cSR"/>
                             <constraint firstItem="89Z-Gx-50c" firstAttribute="leading" secondItem="pD0-1A-M0j" secondAttribute="leading" id="wXr-qx-kXg"/>
                             <constraint firstItem="ptD-41-oK4" firstAttribute="top" secondItem="M4v-A2-vX6" secondAttribute="bottom" constant="25" id="xU8-I9-z5t"/>
                         </constraints>
