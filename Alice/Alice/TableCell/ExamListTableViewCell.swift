@@ -19,5 +19,7 @@ class ExamListTableViewCell: UITableViewCell
         patientNameLabel.text = exam.patient?.name
         examDateLabel.text = exam.createdAt?.stringFromDate("MM/dd/yyyy")
         examResultLabel.text = "\(exam.result)%"
+        let manchester = Manchester()
+        examResultLabel.textColor = manchester.riskColor(exam.result)
     }
 }

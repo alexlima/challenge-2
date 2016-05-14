@@ -19,6 +19,8 @@ class ExamResultViewController: UIViewController
         super.viewDidLoad()
         self.title = "Result"
         resultLabel.text = "\(exam.result)%"
+        let manchester = Manchester()
+        resultLabel.textColor = manchester.riskColor(exam.result)
     }
 
     @IBAction func finishAndSAve(sender: UIButton) {
