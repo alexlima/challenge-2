@@ -1,5 +1,5 @@
 //
-//  FormQuestionTableViewCell.swift
+//  ExamQuestionTableViewCell.swift
 //  Alice
 //
 //  Created by Alex Lima on 13/05/16.
@@ -9,14 +9,14 @@
 import UIKit
 import DLRadioButton
 
-protocol FormQuestionTableViewCellDelegate
+protocol ExamQuestionTableViewCellDelegate
 {
     func formQuestionDidSelectAlternative(questionOrder : Int, alternativeOrder : Int)
 }
 
-class FormQuestionTableViewCell: UITableViewCell
+class ExamQuestionTableViewCell: UITableViewCell
 {
-    var delegate : FormQuestionTableViewCellDelegate! = nil
+    var delegate : ExamQuestionTableViewCellDelegate! = nil
     var questionOrder : Int = 0
     
     @IBOutlet weak var titleLabel: UILabel!

@@ -1,5 +1,5 @@
 //
-//  ExamFormTableViewController.swift
+//  ExamTableViewController.swift
 //  Alice
 //
 //  Created by Alex Lima on 13/05/16.
@@ -8,12 +8,12 @@
 
 import UIKit
 
-protocol ExamFormTableViewControllerDelegate : NSObjectProtocol
+protocol ExamTableViewControllerDelegate : NSObjectProtocol
 {
     func formTableViewController(controller : UIViewController, didSubmitForm form : Form)
 }
 
-class ExamFormTableViewController : BaseTableViewController, FormQuestionTableViewCellDelegate
+class ExamTableViewController : BaseTableViewController, ExamQuestionTableViewCellDelegate
 {
     // var delegate : FormTableViewControllerDelegate! = nil
     var form = Form()
@@ -26,7 +26,8 @@ class ExamFormTableViewController : BaseTableViewController, FormQuestionTableVi
     override func viewDidLoad()
     {
         super.viewDidLoad()
-        self.registerNib("FormQuestion")
+        self.title = "Questions"
+        self.registerNib("ExamQuestion")
         self.initQuestions()
     }
     
@@ -52,8 +53,8 @@ class ExamFormTableViewController : BaseTableViewController, FormQuestionTableVi
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell
     {
-        let identifier = "FormQuestionIdentifier"
-        let cell = tableView.dequeueReusableCellWithIdentifier(identifier, forIndexPath: indexPath) as! FormQuestionTableViewCell
+        let identifier = "ExamQuestionIdentifier"
+        let cell = tableView.dequeueReusableCellWithIdentifier(identifier, forIndexPath: indexPath) as! ExamQuestionTableViewCell
         cell.setQuestion(form.questions[indexPath.row], index: indexPath.row)
         cell.delegate = self
         return cell
@@ -105,4 +106,8 @@ class ExamFormTableViewController : BaseTableViewController, FormQuestionTableVi
         alert.addButtonWithTitle("Entendi")
         alert.show()
     }*/
+    
+    @IBAction func cancelExam(sender: UIBarButtonItem) {
+        self.dismissViewControllerAnimated(true) {}
+    }
 }

@@ -1,5 +1,5 @@
 //
-//  HistoryTableViewCell.swift
+//  ExamListTableViewCell.swift
 //  Alice
 //
 //  Created by Alex Lima on 13/05/16.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class HistoryTableViewCell: UITableViewCell {
+class ExamListTableViewCell: UITableViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -19,6 +19,5 @@ class HistoryTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
-    }
-    
+    }    
 }

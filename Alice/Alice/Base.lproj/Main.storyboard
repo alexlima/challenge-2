@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="1S7-7N-gGW">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="UrF-Ce-gmP">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <scenes>
-        <!--Exam History Table View Controller-->
+        <!--Exams-->
         <scene sceneID="tAi-pu-oZb">
             <objects>
-                <tableViewController id="3v3-FI-1ml" customClass="ExamHistoryTableViewController" customModule="Alice" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="3v3-FI-1ml" customClass="ExamListTableViewController" customModule="Alice" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="g2z-5n-tNy">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="3sr-b4-nRy">
-                                <rect key="frame" x="0.0" y="28" width="320" height="44"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ExamListIdentifier" id="3sr-b4-nRy">
+                                <rect key="frame" x="0.0" y="92" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="3sr-b4-nRy" id="Pqr-2g-mxO">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
@@ -28,29 +28,30 @@
                             <outlet property="delegate" destination="3v3-FI-1ml" id="elb-fN-09b"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="Cqp-Ko-bwU">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="yt8-hr-xkS">
+                    <navigationItem key="navigationItem" title="Exams" id="jEC-ac-jpX">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="Nig-WV-jZq">
                             <connections>
-                                <segue destination="rhR-bS-Rmj" kind="presentation" id="gVf-Ti-gpT"/>
+                                <segue destination="rhR-bS-Rmj" kind="presentation" id="X1L-A2-2ig"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="THf-SQ-pIs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="840" y="-443"/>
+            <point key="canvasLocation" x="1684" y="-443"/>
         </scene>
-        <!--Exam Form Table View Controller-->
+        <!--Questions-->
         <scene sceneID="MhY-DX-QZK">
             <objects>
-                <tableViewController id="1S7-7N-gGW" customClass="ExamFormTableViewController" customModule="Alice" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="1S7-7N-gGW" customClass="ExamTableViewController" customModule="Alice" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="kZb-vd-bSS">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="FormQuestionIdentifier" id="UNC-JV-Xk5">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ExamQuestionIdentifier" id="UNC-JV-Xk5">
                                 <rect key="frame" x="0.0" y="92" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="UNC-JV-Xk5" id="9Xu-5l-zes">
@@ -64,52 +65,67 @@
                             <outlet property="delegate" destination="1S7-7N-gGW" id="Kjc-ri-shS"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="5VC-bt-b61">
-                        <barButtonItem key="rightBarButtonItem" style="plain" id="pNV-pJ-I1N">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="UXR-rW-Qma">
-                                <rect key="frame" x="233" y="7" width="71" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Send"/>
-                            </button>
+                    <navigationItem key="navigationItem" title="Questions" id="5VC-bt-b61">
+                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="wxO-AI-KdO">
+                            <connections>
+                                <action selector="cancelExam:" destination="1S7-7N-gGW" id="lEz-H1-kEB"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Result" id="AlA-vH-NUo">
+                            <connections>
+                                <segue destination="DDO-vZ-k44" kind="show" id="Ehg-P6-QMb"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
-                    <connections>
-                        <segue destination="T57-FO-EGM" kind="show" id="Vuh-Hg-euv"/>
-                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Bgg-jh-hc0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1758" y="-443"/>
+            <point key="canvasLocation" x="2570" y="-443"/>
         </scene>
-        <!--Exam Resume Table View Controller-->
-        <scene sceneID="rcK-qh-VzX">
+        <!--Exam Result View Controller-->
+        <scene sceneID="czT-aJ-gCc">
             <objects>
-                <tableViewController id="T57-FO-EGM" customClass="ExamResumeTableViewController" customModule="Alice" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="Tjs-QI-U5Y">
+                <viewController id="DDO-vZ-k44" customClass="ExamResultViewController" customModule="Alice" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="6aD-Me-oFg"/>
+                        <viewControllerLayoutGuide type="bottom" id="8X2-1A-PX4"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="hSD-oT-cvy">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="89Z-Gx-50c">
+                                <rect key="frame" x="20" y="72" width="280" height="128"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="75%" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pD0-1A-M0j">
+                                <rect key="frame" x="20" y="227" width="280" height="130"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="70"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M4v-A2-vX6">
+                                <rect key="frame" x="20" y="398" width="280" height="48"/>
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <state key="normal" title="FINISH AND SAVE">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="finishAndSAve:" destination="DDO-vZ-k44" eventType="touchUpInside" id="fiT-KW-RZa"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="AeJ-WT-s8B">
-                                <rect key="frame" x="0.0" y="92" width="320" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="AeJ-WT-s8B" id="NH1-Ds-IU8">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="T57-FO-EGM" id="qQe-kZ-ceP"/>
-                            <outlet property="delegate" destination="T57-FO-EGM" id="y9m-GY-pHa"/>
-                        </connections>
-                    </tableView>
+                    </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="W7O-Vm-qVL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="das-6M-DAT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2214" y="-443"/>
+            <point key="canvasLocation" x="3023" y="-443"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="6Lm-tv-jPe">
@@ -128,7 +144,26 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="L2G-2l-Res" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1318" y="-443"/>
+            <point key="canvasLocation" x="2130" y="-443"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="CKb-1e-uI3">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="UrF-Ce-gmP" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="K7e-Hd-r3C">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="3v3-FI-1ml" kind="relationship" relationship="rootViewController" id="bCi-zG-T9y"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="E9f-Kg-1Ds" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1226" y="-443"/>
         </scene>
     </scenes>
 </document>
