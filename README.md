@@ -1,2 +1,2 @@
-# mobile-coding-challenge
-Mobile coding challenge
+# Alice
+This is a mobile application for doctors that priorize patients with a neurological condition called Todd’s Syndrome according to the Manchester Protocol for risk classification. Todd’s syndrome, more frequently referred to as Alice in Wonderland syndrome (AIWS), is a disorienting neurological condition that primarily targets children. AIWS affects human visual perception and involves an array of symptoms that include transient altered perception of the shapes of inanimate and animate objects that appear to be smaller (micropsia) or larger (macropsia) than normal.  
