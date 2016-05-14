@@ -7,14 +7,25 @@
 //
 
 import UIKit
+import RealmSwift
 
-class ExamListTableViewController : BaseTableViewController
+class ExamListTableViewController : BaseTableViewController, UIAlertViewDelegate
 {
+    var exam : Exam = Exam()
+    var exams : Array<Exam> = [Exam]()
+    
     override func viewDidLoad()
     {
         super.viewDidLoad()
         self.title = "Exams"
         self.registerNib("ExamList")
+    }
+    
+    override func viewWillAppear(animated: Bool)
+    {
+        self.exams = realm.objects(Exam).toArray()
+        print(exams)
+        self.tableView.reloadData()
     }
     
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int
@@ -24,14 +35,14 @@ class ExamListTableViewController : BaseTableViewController
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     {
-        return 5; // form.questions.count
+        return exams.count
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell
     {
         let identifier = "ExamListIdentifier"
         let cell = tableView.dequeueReusableCellWithIdentifier(identifier, forIndexPath: indexPath) as! ExamListTableViewCell
-        // cell.setQuestion(form.questions[indexPath.row], index: indexPath.row)
+        cell.setExam(exams[indexPath.row], index: indexPath.row)
         // cell.delegate = self
         return cell
     }
@@ -40,5 +51,35 @@ class ExamListTableViewController : BaseTableViewController
     {
         let height : CGFloat = 70
         return height
+    }
+    
+    @IBAction func addExam(sender: UIBarButtonItem)
+    {
+        let alert = UIAlertView()
+        alert.title = "Please, inform you patient name."
+        alert.addButtonWithTitle("Done")
+        alert.alertViewStyle = UIAlertViewStyle.PlainTextInput
+        alert.addButtonWithTitle("Cancel")
+        alert.delegate = self
+        alert.show()
+    }
+    
+    func alertView(alertView: UIAlertView, clickedButtonAtIndex buttonIndex: Int)
+    {
+        let name = (alertView.textFieldAtIndex(0)?.text)!
+        self.exam.patient = Patient(name: name)
+        self.exam.createdAt = NSDate()
+        self.performSegueWithIdentifier("ExamSegue", sender: self)
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)
+    {
+        if(segue.identifier == "ExamSegue")
+        {
+            let navigation = segue.destinationViewController
+            let controller = navigation.childViewControllers[0] as! ExamTableViewController
+            print(exam)
+            controller.exam = exam
+        }
     }
 }

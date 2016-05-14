@@ -34,6 +34,11 @@
                     </label>
                 </subviews>
             </tableViewCellContentView>
+            <connections>
+                <outlet property="examDateLabel" destination="5UW-Xz-aXx" id="NzH-GQ-69B"/>
+                <outlet property="examResultLabel" destination="daU-a1-uQC" id="MJG-em-vfR"/>
+                <outlet property="patientNameLabel" destination="2C3-hP-9Tw" id="F02-dI-bJd"/>
+            </connections>
             <point key="canvasLocation" x="379" y="280"/>
         </tableViewCell>
     </objects>

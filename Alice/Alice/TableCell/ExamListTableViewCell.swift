@@ -8,16 +8,16 @@
 
 import UIKit
 
-class ExamListTableViewCell: UITableViewCell {
-
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
+class ExamListTableViewCell: UITableViewCell
+{
+    @IBOutlet weak var patientNameLabel: UILabel!
+    @IBOutlet weak var examDateLabel: UILabel!
+    @IBOutlet weak var examResultLabel: UILabel!
+    
+    func setExam(exam : Exam, index : Int)
+    {
+        patientNameLabel.text = exam.patient?.name
+        examDateLabel.text = exam.createdAt?.stringFromDate("MM/dd/yyyy")
+        examResultLabel.text = "\(exam.result)%"
     }
-
-    override func setSelected(selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }    
 }

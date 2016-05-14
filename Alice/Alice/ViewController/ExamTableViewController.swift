@@ -10,18 +10,14 @@ import UIKit
 
 protocol ExamTableViewControllerDelegate : NSObjectProtocol
 {
-    func formTableViewController(controller : UIViewController, didSubmitForm form : Form)
+    func examTableViewController(controller : UIViewController, didSubmitForm form : Form)
 }
 
 class ExamTableViewController : BaseTableViewController, ExamQuestionTableViewCellDelegate
 {
-    // var delegate : FormTableViewControllerDelegate! = nil
+    // var delegate : ExamTableViewControllerDelegate! = nil
     var form = Form()
-    
-    // var validator = Validator()
-    var validationTextFieldArrays : [UITextField] = []
-    
-    // MARK: - TableView Life Cycle
+    var exam : Exam = Exam()
     
     override func viewDidLoad()
     {
@@ -38,8 +34,6 @@ class ExamTableViewController : BaseTableViewController, ExamQuestionTableViewCe
         form.addQuestion("What is your gender?", alternatives: [Alternative(title: "Men"), Alternative(title: "Woman")])
         form.addQuestion("Do you use hallucinogenic drugs?", alternatives: [Alternative(title: "Yes"), Alternative(title: "No")])
     }
-    
-    // MARK: - Table view data source
     
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int
     {
@@ -62,52 +56,32 @@ class ExamTableViewController : BaseTableViewController, ExamQuestionTableViewCe
     
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat
     {
-        let alternatives = form.questions[indexPath.row].alternatives
-        let height = 50.0 + CGFloat(50 * alternatives.count)
+        let height : CGFloat = 160
         return height
-    }
-    
-    func formQuestionDidSelectAlternative(questionOrder: Int, alternativeOrder: Int) {
-        print("formQuestionDidSelectAlternative \(questionOrder) = \(alternativeOrder)")
-    }
-    
-    /*
-    @IBAction func cancelLesion(sender: UIBarButtonItem)
-    {
-        RegisterManager.sharedInstance.register.lesions.removeLast()
-        self.performSegueWithIdentifier("unwindToRegister", sender: self)
-    }
-    
-    @IBAction func saveLesion(sender: UIBarButtonItem)
-    {
-        validator.validate(self)
     }
     
     func formQuestionDidSelectAlternative(questionOrder: Int, alternativeOrder: Int)
     {
-        var alternatives = form.questions[questionOrder].alternatives
-        for (var i = 0; i < alternatives.count; i++){
-            alternatives[i].selected = false
+        print("formQuestionDidSelectAlternative \(questionOrder) = \(alternativeOrder)")
+    }
+    
+    @IBAction func cancelExam(sender: UIBarButtonItem)
+    {
+        self.dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    @IBAction func saveExam(sender: UIBarButtonItem)
+    {
+        exam.result = 50; // form.answers()
+        do {
+            try realm.write() {
+                realm.add(exam)
+            }
+            print("Ok, exam saved.")
+            self.performSegueWithIdentifier("ExamResultSegue", sender: self)
+        } catch {
+            print("Sorry, but something went wrong.")
+            self.dismissViewControllerAnimated(true, completion: nil)
         }
-        alternatives[alternativeOrder].selected = true
-        validationTextFieldArrays[questionOrder].text = "filled"
-    }
-    
-    //MARK: Validation delegate
-    func validationSuccessful() {
-        RegisterManager.sharedInstance.register.lesions.last?.anamnese!.anwsers = form.answers()
-        self.performSegueWithIdentifier("unwindToRegister", sender: self)
-    }
-    
-    func validationFailed(errors: [UITextField : ValidationError]) {
-        let alert = UIAlertView()
-        alert.title = "Anamnese"
-        alert.message = "Você precisa preencher todos os campos do formulário."
-        alert.addButtonWithTitle("Entendi")
-        alert.show()
-    }*/
-    
-    @IBAction func cancelExam(sender: UIBarButtonItem) {
-        self.dismissViewControllerAnimated(true) {}
     }
 }

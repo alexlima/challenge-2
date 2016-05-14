@@ -31,12 +31,15 @@
                     <navigationItem key="navigationItem" title="Exams" id="jEC-ac-jpX">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="Nig-WV-jZq">
                             <connections>
-                                <segue destination="rhR-bS-Rmj" kind="presentation" id="X1L-A2-2ig"/>
+                                <action selector="addExam:" destination="3v3-FI-1ml" id="Jyu-xc-Kft"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <segue destination="rhR-bS-Rmj" kind="show" identifier="ExamSegue" id="ZZx-ZE-NG9"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="THf-SQ-pIs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -71,13 +74,16 @@
                                 <action selector="cancelExam:" destination="1S7-7N-gGW" id="lEz-H1-kEB"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Result" id="AlA-vH-NUo">
+                        <barButtonItem key="rightBarButtonItem" title="Save" id="AlA-vH-NUo">
                             <connections>
-                                <segue destination="DDO-vZ-k44" kind="show" id="Ehg-P6-QMb"/>
+                                <action selector="saveExam:" destination="1S7-7N-gGW" id="d4u-BE-lfU"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <segue destination="DDO-vZ-k44" kind="show" identifier="ExamResultSegue" id="eFN-Hc-agd"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Bgg-jh-hc0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -96,28 +102,34 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="89Z-Gx-50c">
-                                <rect key="frame" x="20" y="72" width="280" height="128"/>
+                                <rect key="frame" x="21" y="96" width="279" height="133"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <string key="text">The Alice in Wonderland syndrome, as described by Todd in 1955, denotes a variety of self-experienced paroxysmal body schema disturbances which may co-occur with depersonalization, derealization, visual illusions and disorders of the time perception.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="75%" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pD0-1A-M0j">
-                                <rect key="frame" x="20" y="227" width="280" height="130"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="70"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M4v-A2-vX6">
                                 <rect key="frame" x="20" y="398" width="280" height="48"/>
                                 <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                <state key="normal" title="FINISH AND SAVE">
+                                <state key="normal" title="FINISH">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="finishAndSAve:" destination="DDO-vZ-k44" eventType="touchUpInside" id="fiT-KW-RZa"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Source: US National Library of Medicine | National Institutes of Health" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ptD-41-oK4">
+                                <rect key="frame" x="21" y="496" width="279" height="47"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="75%" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pD0-1A-M0j">
+                                <rect key="frame" x="20" y="237" width="280" height="130"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="70"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
